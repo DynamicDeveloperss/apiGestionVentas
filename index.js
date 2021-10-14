@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
 const sequelize = require('./database/db.js');
+const Usuario = require('./database/models/usuario');
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }));
 
@@ -12,6 +13,31 @@ app.use(bodyParser.json());
 //     console.log(req.body)
 //     res.send('Hello  prueba!');
 // });
+
+// Rutas de prueba
+
+// Ruta GET de prueba: permite obtener todos los registros de la tabla usuarios
+app.get('/obtenerUsuarios', (req, res) => {
+  Usuario.findAll()
+    .then((result) => {
+      res.json(result);
+    })
+    .catch((error) => {
+      res.send(error);
+    });
+});
+
+// Ruta POST de prueba: permite crear un nuevo registro en la base de datos, exactamente en la tabla de usuarios
+app.post('/agregarUsuario', (req, res) => {
+  Usuario.create({ nombre: req.body.nombre, edad: req.body.edad, correo: req.body.correo })
+    .then((result) => {
+      res.json(result);
+    })
+    .catch((error) => {
+      res.send(error);
+      console.log('Error', error);
+    });
+});
 
 app.listen(5000, () => {
   console.log('Example app listening on port 3000!');
