@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const app = express();
 const sequelize = require('./database/db.js');
 const Usuario = require('./database/models/usuario');
+const Roles = require('./database/models/roles')
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }));
 
