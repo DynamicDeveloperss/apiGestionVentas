@@ -1,9 +1,13 @@
 const express = require('express');
+const cors = require('cors');
 const bodyParser = require('body-parser');
 const app = express();
 const sequelize = require('./database/db.js');
 
 
+app.use(cors({
+    origin: '*'
+}))
 
 const rutaroles = require('./routes/Roles.js');
 // parse application/x-www-form-urlencoded
@@ -13,8 +17,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(rutaroles);
 
-// parse application/json
-app.use(bodyParser.json());
+
 
 // app.post('/venta', (req, res) => {
 //     console.log(req.body)
