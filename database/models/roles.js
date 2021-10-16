@@ -9,6 +9,8 @@ Roles.init(
     cargo: DataTypes.STRING,
     identificacion: DataTypes.INTEGER,
     correo: DataTypes.STRING,
+    roles: DataTypes.STRING,
+    estado: DataTypes.STRING
   },
   { sequelize, modelName: 'Roles', timestamps:false }
 );

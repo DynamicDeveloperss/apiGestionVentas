@@ -3,7 +3,7 @@ module.exports = {
   database: {
     username: 'carito',
     password: 'Test1234*',
-    database: 'dynamic_hardware_roles',
+    database: 'Roles',
     host: 'localhost',
   },
 };

@@ -13,7 +13,7 @@ rutaroles.get('/obtenerRoles', (req, res) => {
 });
 
 rutaroles.post('/agregaRoles', (req, res) => {
-  Roles.create({  apellido: req.body.apellido, nombre: req.body.nombre, cargo: req.body.cargo, correo: req.body.correo, identificacion:req.body.identificacion })
+  Roles.create({  apellido: req.body.apellido, nombre: req.body.nombre, cargo: req.body.cargo, correo: req.body.correo, identificacion:req.body.identificacion, roles:req.body.roles, estado:req.body.estado })
     .then((result) => {
       res.json(result);
     })
