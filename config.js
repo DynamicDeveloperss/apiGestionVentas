@@ -7,8 +7,8 @@ Linux o Mac usan para almacenar valores que pueden variar de un equipo a otro */
 module.exports = {
   database: {
     username: 'root',
-    password: 'gio1234',
-    database: 'dynamic_hardware',
+    password: '123456Nikolas',
+    database: 'vendedores',
     host: 'localhost',
   },
 };
