@@ -8,7 +8,7 @@ const sequelize = require('./database/db.js');
 app.use(cors({
     origin: '*'
 }))
-
+const rutaproductos = require('./routes/Productos.js');
 const rutaroles = require('./routes/Roles.js');
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -16,7 +16,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // parse application/json
 app.use(bodyParser.json());
 app.use(rutaroles);
-
+app.use(rutaproductos);
 
 
 // app.post('/venta', (req, res) => {
