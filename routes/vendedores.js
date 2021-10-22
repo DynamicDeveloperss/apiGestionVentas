@@ -14,7 +14,7 @@ rutasvendedores.get('/obtenervendedores', (req, res) => {
 
 
 rutasvendedores.post('/agregavendedores', (req, res) => {
-    vendedores.create({  lastName: req.body.lastName, sailsName: req.body.sailsName, phone: req.body.phone, dateOfAdmision: req.body.dateOfAdmision, sailsId:req.body.sailsId})
+    vendedores.create({  lastname: req.body.lastname, sailsName: req.body.sailsName, phone: req.body.phone, dateOfAdmision: req.body.dateOfAdmision, sailsId:req.body.sailsId})
       .then((result) => {
         res.json(result);
       })

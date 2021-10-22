@@ -4,7 +4,7 @@ const sequelize = require('../db.js');
 class vendedores extends Model {}
 vendedores.init(
   {
-    lastName: DataTypes.STRING,
+    lastname: DataTypes.STRING,
     sailsName: DataTypes.STRING,
     phone: DataTypes.STRING,
     dateOfAdmision: DataTypes.STRING,
