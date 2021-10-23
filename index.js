@@ -3,6 +3,12 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const app = express();
 const sequelize = require('./database/db.js');
+
+app.use(
+  cors({
+    origin: '*',
+  })
+);
 const rutaproductos = require('./routes/Productos.js');
 const rutaroles = require('./routes/Roles.js');
 const rutasVentas = require('./routes/ventas.js');
@@ -19,7 +25,7 @@ app.use(rutasVentas);
 app.use(rutasvendedores);
 app.use(rutaroles);
 app.use(rutaproductos);
-let port = process.env.PORT || 8080;
+
 app.listen(5000, () => {
   console.log('Example app listening on port 3000!');
   // Conexion a la base de datos desde el servidor
