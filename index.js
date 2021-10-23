@@ -1,10 +1,16 @@
 const express = require('express');
+const cors = require('cors');
 const bodyParser = require('body-parser');
 const app = express();
 const sequelize = require('./database/db.js');
-const cors = require('cors');
 
 
+
+app.use(cors({
+    origin: '*'
+}))
+const rutaproductos = require('./routes/Productos.js');
+const rutaroles = require('./routes/Roles.js');
 const rutasVentas = require('./routes/ventas.js');
 const rutasvendedores = require('./routes/vendedores.js');
 
@@ -14,10 +20,12 @@ app.use(cors());
 // parse application/json
 app.use(bodyParser.json());
 
+
 // Rutas
 app.use(rutasVentas);
 app.use(rutasvendedores);
-
+app.use(rutaroles);
+app.use(rutaproductos);
 
 app.listen(5000, () => {
   console.log('Example app listening on port 3000!');
