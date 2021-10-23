@@ -6,9 +6,9 @@ Linux o Mac usan para almacenar valores que pueden variar de un equipo a otro */
 // Informacion necesaria para establecer la conexion con la base de datos (credenciales)
 module.exports = {
   database: {
-    username: 'root',
-    password: '123456Nikolas',
-    database: 'vendedores',
-    host: 'localhost',
+    username: 'sql10446210',
+    password: 'GSX1xaldMT',
+    database: 'sql10446210',
+    host: 'sql10.freesqldatabase.com',
   },
 };

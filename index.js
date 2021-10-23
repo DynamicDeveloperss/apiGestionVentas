@@ -4,7 +4,7 @@ const app = express();
 const sequelize = require('./database/db.js');
 const cors = require('cors');
 
-const rutasusuarios = require('./routes/usuarios.js');
+
 const rutasVentas = require('./routes/ventas.js');
 const rutasvendedores = require('./routes/vendedores.js');
 
@@ -15,7 +15,6 @@ app.use(cors());
 app.use(bodyParser.json());
 
 // Rutas
-app.use(rutasusuarios);
 app.use(rutasVentas);
 app.use(rutasvendedores);
 
@@ -32,5 +31,6 @@ app.listen(5000, () => {
       console.log('Error', error);
     });
 });
+
 
 //Run app, then load http://localhost:3000 in a browser to see the output.
