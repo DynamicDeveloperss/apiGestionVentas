@@ -6,6 +6,7 @@ const cors = require('cors');
 
 
 const rutasVentas = require('./routes/ventas.js');
+const rutasvendedores = require('./routes/vendedores.js');
 
 // parse application/x-www-form-urlencoded
 app.use(cors());
@@ -15,6 +16,8 @@ app.use(bodyParser.json());
 
 // Rutas
 app.use(rutasVentas);
+app.use(rutasvendedores);
+
 
 app.listen(5000, () => {
   console.log('Example app listening on port 3000!');
