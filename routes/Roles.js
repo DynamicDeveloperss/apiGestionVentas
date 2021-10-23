@@ -15,7 +15,8 @@ rutaroles.get('/obtenerRoles', (req, res) => {
 rutaroles.post('/verificarRol', async (req, res) => {
   try {
     // consultar en la db si existe el email
-    const usuario = await Roles.findOne({ correo: req.body.correo })
+    const usuario = await Roles.findOne({ where: { correo: req.body.correo }});
+    console.log(usuario);
 
     if(usuario) {
       return res.json({ mensaje: 'usuario existe' })
@@ -27,7 +28,7 @@ rutaroles.post('/verificarRol', async (req, res) => {
       nombre: req.body.nombre,
       correo: req.body.correo,
       cargo: '',
-      identificacion: '',
+      identificacion: 0,
       roles: 'usuario',
       estado: 'pendiente'
     }
