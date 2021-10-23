@@ -3,12 +3,6 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const app = express();
 const sequelize = require('./database/db.js');
-
-
-
-app.use(cors({
-    origin: '*'
-}))
 const rutaproductos = require('./routes/Productos.js');
 const rutaroles = require('./routes/Roles.js');
 const rutasVentas = require('./routes/ventas.js');
@@ -19,7 +13,6 @@ app.use(cors());
 
 // parse application/json
 app.use(bodyParser.json());
-
 
 // Rutas
 app.use(rutasVentas);
@@ -39,6 +32,5 @@ app.listen(5000, () => {
       console.log('Error', error);
     });
 });
-
 
 //Run app, then load http://localhost:3000 in a browser to see the output.
